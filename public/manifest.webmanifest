@@ -1,0 +1,9 @@
+{
+  "name": "GODIA PRIME CONNECT SOLUTIONS",
+  "short_name": "GODIA CONNECT",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#123b68",
+  "description": "A business platform connecting customers, shops, suppliers and distributors."
+}
