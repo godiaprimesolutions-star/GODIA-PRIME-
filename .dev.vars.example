@@ -1,0 +1,9 @@
+# Local development only. Never put production secrets in Git.
+# Use fake/test credentials locally; production Daraja credentials belong in Cloudflare Worker Secrets.
+MPESA_ENV=disabled
+MPESA_CONSUMER_KEY=
+MPESA_CONSUMER_SECRET=
+MPESA_SHORTCODE=
+MPESA_PASSKEY=
+MPESA_CALLBACK_URL=
+MPESA_TRANSACTION_TYPE=CustomerPayBillOnline
