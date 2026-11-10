@@ -1,0 +1,23 @@
+name = "godiaprimeconnect"
+main = "src/index.js"
+compatibility_date = "2026-10-01"
+workers_dev = true
+
+[vars]
+ENVIRONMENT = "production"
+# The website and API are served from the same Worker origin.
+ALLOWED_ORIGINS = ""
+MPESA_TRANSACTION_TYPE = "CustomerBuyGoodsOnline"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "godia-prime-db"
+database_id = "7ac72603-15a0-4f24-bff9-0128c066fea2"
+migrations_dir = "migrations"
+
+[ai]
+binding = "AI"
+
+[assets]
+directory = "./public"
+binding = "ASSETS"
