@@ -1,18 +1,15 @@
-name = "godiaprimeconnect"
-main = "src/index.js"
-compatibility_date = "2026-11-05"
 
-[assets]
-directory = "./public"
-binding = "ASSETS"
-not_found_handling = "single-page-application"
+name = "godia-prime-connect-api"
+main = "worker.js"
+compatibility_date = "2026-10-01"
+workers_dev = true
+
+[vars]
+ENVIRONMENT = "production"
+ALLOWED_ORIGINS = "*"
 
 [[d1_databases]]
 binding = "DB"
-database_name = "REPLACE_WITH_YOUR_EXISTING_D1_DATABASE_NAME"
-database_id = "REPLACE_WITH_YOUR_EXISTING_D1_DATABASE_ID"
+database_name = "godia-prime-db"
+database_id = "7ac72603-15a0-4f24-bff9-0128c066fea2"
 migrations_dir = "migrations"
-
-[vars]
-MPESA_ENV = "production"
-MPESA_TRANSACTION_TYPE = "CustomerPayBillOnline"
