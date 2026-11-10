@@ -12,3 +12,7 @@ binding = "DB"
 database_name = "godia-prime-db"
 database_id = "7ac72603-15a0-4f24-bff9-0128c066fea2"
 migrations_dir = "migrations"
+
+[assets]
+directory = "./public"
+binding = "ASSETS"
