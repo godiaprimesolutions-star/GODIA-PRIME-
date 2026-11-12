@@ -115,7 +115,7 @@ async function register(request, env) {
   }
 
   const salt = b64(crypto.getRandomValues(new Uint8Array(16)));
-  const pinHash = await derivePin(pin, salt, 210000);
+  const pinHash = await derivePin(pin, salt, 100000);
   const id = crypto.randomUUID();
 
   try {
