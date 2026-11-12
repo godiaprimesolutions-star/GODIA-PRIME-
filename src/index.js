@@ -36,7 +36,7 @@ async function sha256(value) {
   return b64(await crypto.subtle.digest("SHA-256", new TextEncoder().encode(value)));
 }
 
-async function derivePin(pin, salt, iterations = 210000) {
+async function derivePin(pin, salt, iterations = 100000) {
   const key = await crypto.subtle.importKey(
     "raw", new TextEncoder().encode(pin), "PBKDF2", false, ["deriveBits"]
   );
