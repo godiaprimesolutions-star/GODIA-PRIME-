@@ -612,4 +612,4 @@ export default {
       return permitted && origin ? withCors(response, origin) : response;
     }
   }
-};
+}
