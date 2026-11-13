@@ -195,7 +195,7 @@ async function login(request, env) {
 
   if (!user) return fail("Phone number or PIN is incorrect.", 401);
 
-  // New registrations use 210,000 iterations. The 100,000-iteration
+  // New registrations use 100,000 iterations. The 100,000-iteration
   // fallback keeps accounts created by the earlier Worker working.
   let candidate = await derivePin(pin, user.pin_salt, CURRENT_PIN_ITERATIONS);
   let valid = constantTimeEqual(candidate, user.pin_hash);
