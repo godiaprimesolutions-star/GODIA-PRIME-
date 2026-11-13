@@ -1,0 +1,26 @@
+{
+  "id": "/",
+  "name": "GODIA PRIME CONNECT",
+  "short_name": "GODIA PRIME",
+  "description": "Biashara \u2022 Bidhaa \u2022 Fursa. Connect. Crown. Grow.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#071638",
+  "theme_color": "#071638",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icons/gpc-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/gpc-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
