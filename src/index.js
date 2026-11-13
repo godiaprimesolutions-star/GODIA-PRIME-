@@ -5,7 +5,7 @@ const JSON_HEADERS = {
 
 const AI_MODEL = "@cf/zai-org/glm-4.7-flash";
 const SESSION_SECONDS = 7 * 24 * 60 * 60;
-const CURRENT_PIN_ITERATIONS = 210000;
+const CURRENT_PIN_ITERATIONS = 100000;
 const LEGACY_PIN_ITERATIONS = 100000;
 
 function json(data, status = 200, extra = {}) {
