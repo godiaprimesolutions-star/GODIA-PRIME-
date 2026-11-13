@@ -1,45 +1,36 @@
-
 name = "godia-prime-connect-api"
 main = "src/index.js"
 compatibility_date = "2026-10-01"
 workers_dev = true
-
 [vars]
 ENVIRONMENT = "production"
 ALLOWED_ORIGINS = ""
 MPESA_ENV = "production"
+MPESA_SHORTCODE = "1222123"
 MPESA_TRANSACTION_TYPE = "CustomerBuyGoodsOnline"
 MPESA_CALLBACK_URL = "https://godia-prime-connect-api.godiaprimecompanysolutions.workers.dev/api/mpesa/callback"
-
 [[d1_databases]]
 binding = "DB"
 database_name = "godia-prime-db"
 database_id = "7ac72603-15a0-4f24-bff9-0128c066fea2"
 migrations_dir = "migrations"
-
 [ai]
 binding = "AI"
-
 [assets]
 directory = "./public"
 binding = "ASSETS"
-
 [observability]
 enabled = true
 head_sampling_rate = 1
 redact_query_string = false
-
 [observability.logs]
 enabled = true
 head_sampling_rate = 1
 invocation_logs = true
 persist = true
-
 [observability.traces]
 enabled = true
 head_sampling_rate = 1
 persist = true
-
 [observability.issues]
 enabled = true
-
