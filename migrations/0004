@@ -1,0 +1,54 @@
+
+-- GODIA PRIME CONNECT
+-- Migration 0004: Customer Push Notifications
+
+PRAGMA foreign_keys = ON;
+
+CREATE TABLE IF NOT EXISTS gpce_push_subscriptions (
+    id TEXT PRIMARY KEY,
+    user_id TEXT NOT NULL,
+    endpoint TEXT NOT NULL UNIQUE,
+    p256dh TEXT NOT NULL,
+    auth TEXT NOT NULL,
+    expiration_time INTEGER,
+    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+    FOREIGN KEY (user_id)
+        REFERENCES gpce_users(id)
+        ON DELETE CASCADE
+);
+
+CREATE INDEX IF NOT EXISTS idx_gpce_push_user
+ON gpce_push_subscriptions(user_id);
+
+CREATE TABLE IF NOT EXISTS gpce_notifications (
+    id TEXT PRIMARY KEY,
+    user_id TEXT,
+    payment_id TEXT UNIQUE,
+    title TEXT NOT NULL,
+    message TEXT NOT NULL,
+    receipt_number TEXT,
+    amount REAL,
+    status TEXT NOT NULL DEFAULT 'PENDING',
+    read_at TEXT,
+    sent_at TEXT,
+    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+    FOREIGN KEY (user_id)
+        REFERENCES gpce_users(id)
+        ON DELETE SET NULL,
+
+    FOREIGN KEY (payment_id)
+        REFERENCES gpce_payments(id)
+        ON DELETE SET NULL
+);
+
+CREATE INDEX IF NOT EXISTS idx_gpce_notifications_user
+ON gpce_notifications(user_id);
+
+CREATE INDEX IF NOT EXISTS idx_gpce_notifications_status
+ON gpce_notifications(status);
+
+CREATE INDEX IF NOT EXISTS idx_gpce_notifications_created
+ON gpce_notifications(created_at);
